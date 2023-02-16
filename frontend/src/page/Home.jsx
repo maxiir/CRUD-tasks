@@ -14,6 +14,7 @@ function Home(){
       <Formik initialValues={{
         name:'',
         description:'',
+        date:''
       }} onSubmit={(values)=>{
         newTask(values)
       }} >
