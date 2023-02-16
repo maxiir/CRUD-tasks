@@ -20,7 +20,7 @@ app.use(router)
 if(stateProyect){
     app.use(express.static(join(__dirname,'/frontend/dist')))
     app.get('*',(req,res) =>{
-        const index = join(__dirname,'/index.html')
+        const index = join(__dirname,'/frontend/dist/index.html')
         res.sendFile(index,(err)=>{
             if(err){
                 res.status(500).json({err:'error con el envio de archivos'})
