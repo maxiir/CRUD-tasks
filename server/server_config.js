@@ -13,9 +13,12 @@ const __dirname= dirname(fileURLToPath(import.meta.url))
 const stateProyect = process.env.STATE === 'production'
 export const port = process.env.PORT || 3000
 
-app.use(cors())
+app.use(cors({
+    origin:'https://crud-tasks-54icnw3z6-maxiir.vercel.app'
+}))
 //para vercel
 app.use((req, res, next) => {
+    
     res.header("Access-Control-Allow-Origin", "https://crud-tasks-ruddy.vercel.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
