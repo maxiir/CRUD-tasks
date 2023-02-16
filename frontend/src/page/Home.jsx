@@ -2,13 +2,14 @@ import Nav from "../components/Nav";
 import {useEffect, useState} from 'react'
 import { Formik } from 'formik'
 import { newTask } from "../api/api_rest.js";
-
+import { delTask } from "../api/api_rest.js";
 function Home(){
   
 
   return (
     <div>
       <Nav />
+      {/* create */}
       <h1>Add tasks</h1>
 
       <Formik initialValues={{
@@ -26,6 +27,20 @@ function Home(){
           </form>
         )}
         
+      </Formik>
+      {/* delete */}
+      <Formik initialValues={{
+        id:''
+      }}
+      onSubmit={(id)=>{
+        delTask(id)
+      }}>
+        {({handleChange,handleSubmit})=>(
+          <form onSubmit={handleSubmit}>
+            <input type="text" name='id' placeholder="id:" onChange={handleChange}/>
+            <button type="submit">eliminar</button>
+          </form>
+        )}
       </Formik>
      
      

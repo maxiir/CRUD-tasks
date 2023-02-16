@@ -8,3 +8,9 @@ controller.addTask = async (req,res) => {
     await save.save()
     res.send('datos guardados con exito!')
 }
+
+controller.delTask = async (req,res) =>{
+    const {id} = req.params.id
+    await myModel.remove(id)
+    res.send('dato eliminado')
+}
