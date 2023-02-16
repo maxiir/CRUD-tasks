@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(router)
 
 if(stateProyect){
-    app.use(express.static(join(__dirname,'./src/dist')))
+    app.use(express.static(join(__dirname,'/frontend/dist')))
     app.get('*',(req,res) =>{
         const index = join(__dirname,'/index.html')
         res.sendFile(index,(err)=>{
