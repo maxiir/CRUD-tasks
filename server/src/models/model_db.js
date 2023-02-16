@@ -2,8 +2,14 @@ import {model,Schema} from 'mongoose'
 
 const db_Model = new Schema({
 
-    "title":String,
-    "description": String,
+    "title":{
+        "type": String,
+        "require": true
+    },
+    "description":{
+        "type": String,
+        "require": true
+    },
     "data":{
         "type": Date,
         "default": Date.now
