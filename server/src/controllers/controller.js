@@ -10,7 +10,7 @@ controller.addTask = async (req,res) => {
 }
 
 controller.delTask = async (req,res) =>{
-    const {id} = req.params.id
+    const {id} = req.params
     await myModel.remove({_id:id})
     res.send('dato eliminado')
 }
