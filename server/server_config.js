@@ -14,6 +14,12 @@ const stateProyect = process.env.STATE === 'production'
 export const port = process.env.PORT || 3000
 
 app.use(cors())
+//para vercel
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://crud-tasks-ruddy.vercel.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 app.use(express.json())
 app.use(router)
 
