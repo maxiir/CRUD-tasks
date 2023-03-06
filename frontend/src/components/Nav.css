@@ -1,0 +1,28 @@
+nav{
+    background-color: rgb(28, 27, 27);
+    height: 50px;
+    
+    
+}
+nav ul{
+    display: flex;
+    padding: 7px;
+}
+
+nav a{
+    transition: all .9s;
+    font-size: 20px;
+    color: white;
+    margin: 0 20px;
+    font-weight: 500;
+}
+
+nav a::after{
+    margin: 0 20px;
+    content: '|';
+}
+nav a:hover{
+    color: rgb(67, 126, 252);
+    font-size: 22px;
+    transition: all .2s;
+}

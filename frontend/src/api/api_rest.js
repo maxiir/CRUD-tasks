@@ -1,7 +1,18 @@
-import axios from 'axios'
+import axios from "axios";
 
-export const newTask = async (values) =>
-    await axios.post('https://crud-tasks-production.up.railway.app/api/addtask', values)
-export const delTask = async (id) =>{
-    await axios.delete(`https://crud-tasks-production.up.railway.app/api/deltask/${id}`)
-}
+export const newNote = async (values) =>
+  await axios.post("http://localhost:5000/api/addnote", values);
+
+export const allNotes = async () =>
+  await axios.get("http://localhost:5000/api/allnotes");
+
+export const getNote = async (id) =>
+  await axios.get(`http://localhost:5000/api/getnote/${id}`);
+
+
+export const delNote = async (id) =>
+  await axios.delete(`http://localhost:5000/api/delnote/${id}`);
+  
+// cambiar post a put
+export const updateNote = async (id,values) =>
+  await axios.put(`http://localhost:5000/api/editnote/${id}`,values);
